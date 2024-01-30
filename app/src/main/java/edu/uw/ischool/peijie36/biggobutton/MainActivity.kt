@@ -18,9 +18,9 @@ class MainActivity : AppCompatActivity() {
         bigGoBtn.setOnClickListener(View.OnClickListener {
             count += 1
             if (count > 1) {
-                bigGoBtn.setText("You have pushed me $count times")
+                bigGoBtn.setText("You have pushed me $count times!")
             } else {
-                bigGoBtn.setText("You have pushed me $count time")
+                bigGoBtn.setText("You have pushed me $count time!")
             }
             bigGoBtn.setBackgroundColor(Color.parseColor(generateRandomHexCode()))
             bigGoBtn.setTextColor(Color.parseColor(generateRandomHexCode()))
