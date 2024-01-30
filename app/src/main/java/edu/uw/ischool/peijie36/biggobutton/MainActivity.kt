@@ -9,11 +9,12 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     var count = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val bigGoBtn = findViewById<Button>(R.id.big_go_btn)
 
+        val bigGoBtn = findViewById<Button>(R.id.big_go_btn)
         bigGoBtn.setOnClickListener(View.OnClickListener {
             count += 1
             if (count > 1) {
@@ -21,12 +22,12 @@ class MainActivity : AppCompatActivity() {
             } else {
                 bigGoBtn.setText("You have pushed me $count time")
             }
-            //bigGoBtn.setBackgroundColor(Color.parseColor("#FFFFFF"))
             bigGoBtn.setBackgroundColor(Color.parseColor(generateRandomHexCode()))
             bigGoBtn.setTextColor(Color.parseColor(generateRandomHexCode()))
         })
     }
-
+    
+    // Util function that generates a random color hex code
     private fun generateRandomHexCode(): String {
         val random = Random.Default
         val color = random.nextInt(0xFFFFFF + 1)
